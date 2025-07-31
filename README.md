@@ -13,3 +13,10 @@ federated_encryption/
 ├── quantum/
 │   ├── teleportation.py
 ├── main_federated_loop.py use this and implement two way 
+
+| Process                 | Direction        | Key Used           | Function                     |
+|-------------------------|------------------|--------------------|------------------------------|
+| Global Model Encryption | Server → Clients | Client public key  | encrypt_global_model()       |
+| Global Model Decryption | Client           | Client private key | decrypt_global_model()       |
+| Local Model Encryption  | Client → Server  | Server public key  | encrypt_model_bytes()        |
+| Local Model Decryption  | Server           | Server private key | decrypt_and_assign_weights() |
